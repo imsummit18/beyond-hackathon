@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: #0202ad;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  /* html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+  } */
+
+  * {
+    @apply border-border;
+  }
+
+  /* * {
+    scroll-behavior: smooth;
+  } */
+
+  body {
+    @apply bg-background text-sm;
+  }
+
+  p,
+  span,
+  label {
+    @apply leading-6;
+  }
+}
+
+.leaders button.-left-12 {
+  left: -17px;
+  background: #a3b4f9;
+  border: none;
+}
+
+.leaders button.-right-12 {
+  right: -17px;
+  background: #a3b4f9;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .leaders button.-left-12 {
+    left: -10px;
+  }
+
+  .leaders button.-right-12 {
+    right: -10px;
+  }
+}
+
+.vertical-timeline::before {
+  height: calc(100% - 13px) !important;
+}
+
+.vertical-timeline .is-hidden {
+  visibility: visible !important;
+}
+
+body .vertical-timeline {
+  padding: 0;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns .vertical-timeline-element-content {
+    text-align: left;
+    float: right;
+  }
+
+  .vertical-timeline--two-columns
+    .vertical-timeline-element:nth-child(2n):not(
+      .vertical-timeline-element--left
+    )
+    .vertical-timeline-element-content {
+    text-align: right;
+    float: left !important;
+  }
+
+  .vertical-timeline.vertical-timeline--two-columns {
+    /* display: flex;
+    flex-direction: column-reverse; */
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element-icon {
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element-content {
+    padding: 0 !important;
+    width: 46% !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element-content-arrow {
+    visibility: hidden;
+  }
+  .vertical-timeline-element-content p {
+    font-size: 13px !important;
+    margin-top: 0 !important;
+    font-weight: 400 !important;
+  }
+}
+
+body .vertical-timeline-element-icon {
+  box-shadow: none !important;
+}
+
+.vertical-timeline::before {
+  width: 1px !important;
+  background: #b3babd !important;
+}
+.modal-success-message button {
+  outline: none !important;
+  color: #fff;
+  box-shadow: none !important;
+}
+html[dir='rtl']
+  .detail-info
+  div[data-orientation='vertical']
+  .grid-cols-2
+  div:nth-child(odd) {
+  grid-column-start: 2;
+}
+html[dir='rtl']
+  .detail-info
+  div[data-orientation='vertical']
+  > .pt-0.pb-0
+  > div {
+  text-align: right;
+}
+@media only screen and (min-width: 1170px) {
+  html[dir='rtl']
+    .vertical-timeline--two-columns
+    .vertical-timeline-element-content {
+    text-align: right;
+    float: left;
+  }
+
+  html[dir='rtl']
+    .vertical-timeline--two-columns
+    .vertical-timeline-element:nth-child(2n):not(
+      .vertical-timeline-element--left
+    )
+    .vertical-timeline-element-content {
+    text-align: left;
+    float: right !important;
+  }
+}
