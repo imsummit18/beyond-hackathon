@@ -37,16 +37,21 @@ const config = {
           medium: '#4567F3',
           ultralight: '#A3B4F9',
           extralight: '#EEF1FF',
+          500: "#1A2147"
+
         },
         secondary: {
           DEFAULT: '#F0B441',
           foreground: 'hsl(var(--secondary-foreground))',
           light: '#F9F1E1',
           ultralight: '#E7E9EA',
+          500: "#CAA857"
         },
+        
         green: {
           light: '#B3BABD',
           dark: '#081820',
+          normal: "#0B7552"
         },
         table: {
           normal: '#07131A',
@@ -60,6 +65,7 @@ const config = {
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'h sl(var(--destructive-foreground))',
+          500:"#901B1E"
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',

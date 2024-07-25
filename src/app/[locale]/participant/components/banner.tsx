@@ -8,6 +8,11 @@ import CountdownTime from './countdown-time';
 
 import bannerImg from '../../../../../public/images/banner.jpg';
 import { useParams } from 'next/navigation';
+import ButtonWithIcon from '@/components/ui/button-with-icon';
+import { RightArrow } from '../../../../../public/icons';
+import BannerImages from './banner-images';
+
+
 const bgImg = {
   backgroundImage: `url(${bannerImg.src})`,
   backgroundSize: 'cover',
@@ -21,41 +26,50 @@ function Banner({ isAuth }: { isAuth: boolean }) {
   const { locale } = useParams();
 
   return (
-    <div className='flex items-center pt-10'>
-      <div className='container'>
+    <div className=' flex items-center py-10 bg-primary-500'>
+      <div className='container relative'>
         <div
           className='flex items-center overflow-hidden rounded-[18px] p-[20px] lg:p-[50px]'
-          style={bgImg}
+        // style={bgImg}
         >
-          <div className='flex justify-end flex-1 w-full'>
+          <BannerImages />
+
+          <div className='flex justify-end flex-1 w-full mt-12'>
             <div
               className={cn(
-                'flex flex-wrap flex-col justify-center max-w-[580px] w-full p-[20px] lg:p-[50px] bg-secondary-ultralight/95  overflow-hidden rounded-[18px] min-h-[350px'
+                'flex flex-wrap flex-col  items-center justify-center w-full   overflow-hidden rounded-[18px] min-h-[350px'
               )}
             >
               <h1
                 className={cn(
-                  'text-secondary text-[24px] lg:text-[40px] uppercase tracking-[0.4rem] mb-[15px] lg:mb-[20px] font-normal leading-[1.2]',
+                  'text-white text-[24px] lg:text-[50px] uppercase tracking-[0.4rem] mb-[15px] lg:mb-[20px] font-normal leading-[1.2]',
                   {
                     'tracking-normal': locale === 'ar',
                     'tracking-[0.4rem]': locale === 'en',
                   }
                 )}
               >
-                {t('industrial_hackathon')}
+                {t('industrial_hackathon')}{" "}2024
               </h1>
-              <span className={cn('text-grey-normal text-[14px] lg:text-[18px] uppercase tracking-[0.2rem]  mb-[15px] lg:mb-[20px] font-medium',
+              <span className={cn('text-white text-[14px] lg:text-[18px] uppercase tracking-[0.2rem]  mb-[15px] lg:mb-[20px] font-medium',
                 {
                   'tracking-normal': locale === 'ar',
                   'tracking-[0.2rem]': locale === 'en',
                 }
               )}>
-                {t('innovation')}
+                {t('Begining_Of_Hackathon')}
               </span>
               <div className='timer'>
                 <CountdownTime />
               </div>
-              <div className='lg:flex items-center lg:gap-[25px]'>
+              <Link href="/register" className='mt-8'>
+                <ButtonWithIcon
+                  icon={locale === "ar" ? <RightArrow className="transform rotate-180" size={28} /> : <RightArrow size={28} />}
+                  className='h-14 py-0 text-lg font-medium rounded-[10px] bg-green-normal hover:bg-green-normal/80'>
+                  {t("Join_The_Hackathon")}
+                </ButtonWithIcon>
+              </Link>
+              {/* <div className='lg:flex items-center lg:gap-[25px]'>
                 {!isAuth && (
                   <Link href='/register'>
                     <Button
@@ -75,9 +89,13 @@ function Banner({ isAuth }: { isAuth: boolean }) {
                   'tracking-normal': locale === 'ar',
                   'tracking-[0.2rem]': locale === 'en',
                 })}>
-                  {t('virtual')}
+     <ButtonWithIcon
+                  icon={<RightArrow size={28} />}
+                  className='h-14 py-0 text-lg font-medium rounded-[10px] bg-green-normal hover:bg-green-normal/80'>
+                  {t("Join_The_Hackathon")}
+                </ButtonWithIcon>               {t('virtual')}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

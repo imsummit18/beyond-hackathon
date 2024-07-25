@@ -25,41 +25,61 @@ const CountdownTime = () => {
   return (
     <div>
       <>
-        <div className='counter flex mb-[15px] mt-[5px] lg:mb-[30px] lg:mt-[30px]'>
-          {/* <span>{timeBetween.years()}yr </span>
-        <span>{timeBetween.months()}m </span> */}
-          <div className='item text-center text-primary-normal pr-[10px] lg:pr-[25px] lg:text-[42px]'>
-            {timeBetween.days()}
-            <span className={cn('font-bold block text-secondary text-[8px] tracking-[0.20rem] uppercase mt-[10px] lg:mt-[20px]', {
-              'tracking-normal': locale === 'ar',
-              'tracking-[0.20rem]': locale === 'en',
+        <div className='counter flex gap-5 mb-[15px] mt-[5px] lg:mb-[30px] lg:mt-[30px]'>
+
+          {/* Days */}
+          <div className={cn("bg-primary  items-center lg:h-[100px] lg:w-[106px] rounded-[10px] text-primary-normal pt-7 pr-[10px] lg:pr-[35px]", {
+            ' pr-[10px] lg:pr-[25px] ': locale === 'ar',
+            ' pl-[10px] lg:pl-6 ': locale === 'en',
+          })}>
+            <span className='text-secondary-500 lg:text-[50px] '>{String(timeBetween.days()).padStart(2, '0')}</span>
+            <span className={cn('font-bold block text-white text-[8px] tracking-[0.20rem] uppercase', {
+              'tracking-normal lg:pr-4': locale === 'ar',
+              'tracking-[0.20rem] lg:pl-[14px] ': locale === 'en',
             })}>
               {t('days')}
             </span>
           </div>
-          <div className='item text-center text-primary-normal pr-[10px] lg:pr-[25px] lg:text-[42px]'>
-            {timeBetween.hours()}
-            <span className={cn('font-bold block text-secondary text-[8px] tracking-[0.20rem] uppercase mt-[10px] lg:mt-[20px]', {
-              'tracking-normal': locale === 'ar',
-              'tracking-[0.20rem]': locale === 'en',
+
+          {/* Hours */}
+
+          <div className={cn("bg-primary  items-center lg:h-[100px] lg:w-[106px] rounded-[10px] text-primary-normal pt-7 pr-[10px] lg:pr-[35px]", {
+            ' pr-[10px] lg:pr-[25px] ': locale === 'ar',
+            ' pl-[10px] lg:pl-6 ': locale === 'en',
+          })}>
+            <span className='text-secondary-500 lg:text-[50px] '>{String(timeBetween.hours()).padStart(2, '0')}</span>
+            <span className={cn('font-medium block text-white text-[8px] tracking-[0.20rem] uppercase', {
+              'tracking-normal lg:pr-2': locale === 'ar',
+              'tracking-[0.20rem] lg:pl-3 ': locale === 'en',
             })}>
               {t('hours')}
             </span>
           </div>
-          <div className='item text-center text-primary-normal pr-[10px] lg:pr-[25px] lg:text-[42px]'>
-            {timeBetween.minutes()}
-            <span className={cn('font-bold block text-secondary text-[8px] tracking-[0.20rem] uppercase mt-[10px] lg:mt-[20px]', {
-              'tracking-normal': locale === 'ar',
-              'tracking-[0.20rem]': locale === 'en',
+
+
+          {/* Minutes */}
+          <div className={cn("bg-primary  items-center lg:h-[100px] lg:w-[106px] rounded-[10px] text-primary-normal pt-7 pr-[10px] lg:pr-[35px]", {
+            ' pr-[10px] lg:pr-[25px] ': locale === 'ar',
+            ' pl-[10px] lg:pl-6 ': locale === 'en',
+          })}>
+            <span className='text-secondary-500 lg:text-[50px] '>{String(timeBetween.minutes()).padStart(2, '0')}</span>
+            <span className={cn('font-bold block text-white text-[8px] tracking-[0.20rem] uppercase', {
+              'tracking-normal lg:pr-3': locale === 'ar',
+              'tracking-[0.20rem] lg:pl-2': locale === 'en',
             })}>
               {t('minute')}
             </span>
           </div>
-          <div className='item text-center text-primary-normal pr-[10px] lg:pr-[25px] lg:text-[42px]'>
-            {timeBetween.seconds()}
-            <span className={cn('font-bold block text-secondary text-[8px] tracking-[0.20rem] uppercase mt-[10px] lg:mt-[20px]', {
-              'tracking-normal': locale === 'ar',
-              'tracking-[0.20rem]': locale === 'en',
+
+          {/* Second */}
+          <div className={cn("bg-primary  items-center lg:h-[100px] lg:w-[106px] rounded-[10px] text-primary-normal pt-7 pr-[10px] lg:pr-[35px]", {
+            ' pr-[10px] lg:pr-[25px] ': locale === 'ar',
+            ' pl-[10px] lg:pl-6 ': locale === 'en',
+          })}>
+            <span className='text-secondary-500 lg:text-[50px] '>{String(timeBetween.seconds()).padStart(2, '0')}</span>
+            <span className={cn('font-bold block text-white text-[8px] tracking-[0.20rem] uppercase', {
+              'tracking-normal lg:pr-2': locale === 'ar',
+              'tracking-[0.20rem] lg:pl-1': locale === 'en',
             })}>
               {t('second')}
             </span>

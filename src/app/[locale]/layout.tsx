@@ -1,5 +1,4 @@
 import Footerprimary from '@/components/footerPrimary';
-import NavigationPrimary from '@/components/navigationPrimary';
 import TranslationsProvider from '@/components/translations-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { auth } from '@/auth';
@@ -11,6 +10,8 @@ import type { Metadata } from 'next';
 import i18nConfig from '../../../i18nConfig';
 import './globals.css';
 import AuthProvider from '@/components/auth-provider';
+import Header from '@/components/header';
+import NavigationPrimary from '@/components/navigationPrimary';
 
 export const metadata: Metadata = {
   title: 'Beyond Frontend',

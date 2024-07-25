@@ -11,17 +11,25 @@ import { useTranslation } from 'react-i18next';
 import i18nConfig from '../../i18nConfig';
 import MainLogo from '../../public/images/blue-logo.svg';
 import MainLogoG from '../../public/images/gray-logo.svg';
+import { Button } from './ui/button';
+import { Icons } from './icons';
+import ButtonWithIcon from './ui/button-with-icon';
+
+// const navigation = [
+//   { name: 'home', href: '/' },
+//   { name: 'about', href: '/#about' },
+//   { name: 'tracks', href: '/#tracks' },
+//   { name: 'faqs', href: '/faqs' },
+//   { name: 'winners', href: '/winners' },
+// ];
 
 const navigation = [
-  { name: 'home', href: '/' },
-  { name: 'about', href: '/#about' },
-  // { name: 'leaders', href: '/#leaders' },
-  { name: 'tracks', href: '/#tracks' },
-  // { name: 'notice_board', href: '/notice' },
-  { name: 'faqs', href: '/faqs' },
-  { name: 'winners', href: '/winners' },
-  // { name: 'public_voting', href: '/voting' },     //this is commented but it needs to be uncommented when feature is ready and also the file name should be changed to voting from votings
+  { name: 'Challenges', href: '/#challenges' },
+  { name: 'Awards', href: '/#awards' },
+  { name: 'Previous_Versions', href: '/previous-versions' },
+  { name: 'Common_Questions', href: '/faqs' },
 ];
+
 function Navigation({ isAuth }: { isAuth: boolean }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { locale } = useParams();
@@ -61,33 +69,10 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
 
   return (
     <>
-      <header className='inset-x-0 top-0 z-50 topnav bg-primary'>
+      <header className='inset-x-0 top-0 z-50 topnav bg-primary-500'>
         <div className='container'>
-          {/* mobile nav */}
-          {/* <div className=' flex lg:hidden lg:gap-x-8 justify-end pt-3 pb-3 '>
-            <Link
-              href={'/#login'}
-              className={cn("text-[8px] ml-5 tracking-[0.15rem] uppercase font-light text-white hover:text-primary-lighter transition", {
-                'tracking-[0.15rem]': locale === 'en',
-                'tracking-normal': locale === 'ar',
-              })}
-            >
-              {t('member_login')}
-            </Link>
-            <button
-              onClick={handleChange}
-              className={
-                cn("text-[8px] ml-5 tracking-[0.15rem] uppercase font-light text-white hover:text-primary-lighter transition", {
-                  'tracking-[0.15rem]': locale === 'en',
-                  'tracking-normal': locale === 'ar',
-                })
-              }
-            >
-              العربية
-            </button>
-          </div> */}
 
-          <div className='flex   lg:hidden gap-x-5 justify-end  pt-3 pb-3 '>
+          {/* <div className='flex   lg:hidden gap-x-5 justify-end  pt-3 pb-3 '>
             {!isAuth && (
               <Link
                 href={'/#login'}
@@ -127,19 +112,13 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
               </Link>
             )}
 
-            {/* <Link
-              href='/contact'
-              className='text-[8px] ml-5 tracking-[0.15rem] uppercase font-light text-white hover:text-secondary transition'
-            >
-              {t('contact_us')}
-            </Link> */}
-          </div>
+          </div> */}
 
           <nav
-            className='flex items-center justify-between pt-2 pb-6 lg:pt-5 lg:pb-5'
+            className='flex items-center justify-between pt-2 pb-6 lg:pt-10 lg:pb-10'
             aria-label='Global'
           >
-            <div className='flex lg:flex-1'>
+            {/* <div className='flex lg:flex-1'>
               <Link href='/' className='-m-1.5 p-1.5'>
                 <span className='sr-only'>Your Company</span>
                 <Image
@@ -148,9 +127,11 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
                   alt='Picture of the author'
                 />
               </Link>
-            </div>
-            <div className='right'>
-              <div className='flex lg:hidden'>
+            </div> */}
+
+
+            {/* <div className='right'> */}
+            {/* <div className='flex lg:hidden'>
                 <button
                   type='button'
                   className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
@@ -203,26 +184,26 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
                   </Link>
                 )}
 
-                {/* <Link
-              href='/contact'
-              className='text-[8px] ml-5 tracking-[0.15rem] uppercase font-light text-white hover:text-secondary transition'
-            >
-              {t('contact_us')}
-            </Link> */}
-              </div>
-              <div className='hidden lg:flex lg:gap-x-12'>
+              </div> */}
+
+            <div className='w-full flex items-center justify-between'>
+              <div className='hidden lg:flex  items-center lg:gap-x-12'>
+                <Link href="/">
+                  <Button
+                    className=' border border-secondary text-secondary bg-transparent rounded-[10px] h-9'>{t("Main")}</Button>
+                </Link>
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      'text-[11px] tracking-[0.15rem] uppercase font-bold text-white hover:text-primary-lighter transition',
+                      ' tracking-[0.15rem] uppercase font-bold text-white hover:text-primary-lighter transition',
                       {
                         'text-primary-lighter':
                           item.href === pathname ||
                           `/ar${item.href}` === pathname,
-                        'tracking-normal': locale === 'ar',
-                        'tracking-[0.15rem]': locale === 'en',
+                        'tracking-normal text-base': locale === 'ar',
+                        'tracking-[0.15rem] text-[12px]': locale === 'en',
                       }
                     )}
                   >
@@ -230,7 +211,28 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
                   </Link>
                 ))}
               </div>
+              <div className='flex items-center gap-4'>
+                <button
+                  onClick={handleChange}
+                  className={cn("text-[10px] tracking-normal uppercase font-light text-white hover:text-primary-lighter transition", {
+                  })}
+                >
+                  {locale === 'en' ? 'العربية' : 'en'}
+                </button>
+                <Link href="sign-in">
+                  <ButtonWithIcon
+                    icon={<Icons.personIcon />}
+                    className={cn("text-white font-normal bg-transparent border-[2px] rounded-[10px] h-9 border-primary ", {
+                      'text-base': locale === 'ar',
+                      'text-[12px]': locale === 'en',
+                    })}>
+                    {t("Sign_In")}
+                  </ButtonWithIcon>
+                </Link>
+
+              </div>
             </div>
+            {/* </div> */}
           </nav>
         </div>
         <Dialog
@@ -255,7 +257,6 @@ function Navigation({ isAuth }: { isAuth: boolean }) {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className='sr-only'>Close menu</span>
-                {/* <XMarkIcon className="h-6 w-6" aria-hidden="true" /> */}
                 <X strokeWidth={1} />
               </button>
             </div>

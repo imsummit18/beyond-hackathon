@@ -20,6 +20,9 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
+
+const i18nNamespaces = ['home'];
+
 function SignIn() {
   const { t } = useTranslation();
   const router = useRouter();

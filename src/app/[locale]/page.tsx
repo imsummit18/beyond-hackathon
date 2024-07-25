@@ -4,8 +4,11 @@ import initTranslations from '@/lib/i18n';
 import { LocaleT } from '@/types';
 import About from './participant/components/about';
 import Banner from './participant/components/banner';
-import FilmationTracks from './participant/components/filmation-tracks';
-import SignIn from './participant/components/sign-in';
+import Tracks from './participant/components/tracks';
+import Awards from './participant/components/awards';
+import AcceptanceCriteria from './participant/components/acceptance-criteria';
+import HackathonJourney from './participant/components/hackathon-journey';
+import SuccessPartners from './participant/components/success-partners';
 
 interface Params {
   params: {
@@ -25,12 +28,19 @@ export default async function Home({ params: { locale } }: Params) {
       locale={locale}
       resources={resources}
     >
-      <main className='mt-5'>
+      <main >
         <Banner isAuth={!!session} />
-        <About />
-        {/* <Leaders /> */}
-        <FilmationTracks />
-        {!session && <SignIn />}
+        <div className='w-full max-w-[1440px]   mx-auto '>
+          <About />
+          <Tracks />
+          <AcceptanceCriteria />
+          <HackathonJourney/>
+          <Awards/>
+          <SuccessPartners/>
+
+          {/* <FilmationTracks />
+        {!session && <SignIn />} */}
+        </div>
       </main>
     </TranslationsProvider>
   );
