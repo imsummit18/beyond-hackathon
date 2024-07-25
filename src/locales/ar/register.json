@@ -1,5 +1,5 @@
 {
-  "IoT": "انترنت الأشياء",
+  "IoT": "تصنيع",
   "Artificial_intelligence": "الذكاء الاصطناعي",
   "Robotics": "الروبوتات",
   "Blockchain": "سلسلة الكتل",
@@ -7,7 +7,7 @@
   "Cyber_security": "الأمن السيبراني",
   "Virtual_Reality": "الواقع الافتراضي",
   "Metaverse": "ميتافيرس",
-  "E_Games": "الألعاب الإلكترونية",
+  "E_Games": "هندسة",
   "Online_platforms": "منصة الكترونية",
   "Web_Development": "تطوير المواقع",
   "Digital_Applications": "تطوير التطبيقات الرقمية",
@@ -120,7 +120,7 @@
   "Paste_the_YouTube_URL_here": "الصق عنوان URL الخاص باليوتيوب هنا",
   "Are_you_sure_want_to_logout": "هل أنت متأكد من تسجيل الخروج؟",
   "Logout": "تسجيل الخروج",
-  "Close": "يغلق",
+  "Close": "اغلاق",
   "Tracks": "المسارات",
   "Select_Track": "حدد المسار",
   "Send": "ارسال"
